@@ -1,0 +1,42 @@
+
+<%- include("./components/header") %> 
+
+<form method="POST" action="/feed">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Name</label>
+    <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="name">
+   
+  <div class="form-group">
+    <label for="exampleInputPassword1">message</label>
+    <input type="text" name="message" class="form-control" id="exampleInputPassword1" placeholder="message">
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+
+
+
+<% if (result.length > 0 ) { %>
+    <% result.forEach(element => {%>
+         <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h2><%= element.name %> </h2> 
+              <p class="card-text"> <%= element.message%></p>
+              <a href="/feed/<%= element._id %>"> See more</a>
+            </div>
+          </div>
+        
+          <%}); %>
+    <% } else {%>
+        
+        <%}%>
+
+
+<%- include("./components/footer") %> 
+
+
+
+
+

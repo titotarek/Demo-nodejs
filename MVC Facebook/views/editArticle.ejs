@@ -1,0 +1,19 @@
+
+<%- include("./components/header") %> 
+
+
+<form method="POST" action=/edit-article/<%= result._id%>>
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">Naem</label>
+      <input type="text" name="name" value=<%= result.name%> class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="title">
+     
+    <div class="form-group">
+      <label for="exampleInputPassword1">Message</label>
+      <input type="text" name="message" value=<%= result.message%>  class="form-control" id="exampleInputPassword1" placeholder="article">
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+<%- include("./components/footer") %> 
